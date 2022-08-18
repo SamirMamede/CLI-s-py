@@ -7,15 +7,21 @@ SIMBOLS = '@%#_-+=,.'
 
 def generate_password(letters=8, numbers=4, simbols=2):
     generated = ""
-    for i in range(letters):
-        generated += random.choice(LETTERS)
-    for i in range(numbers):
-        generated += random.choice(NUMBERS)
-    for i in range(simbols):
-        generated += random.choice(SIMBOLS)
-    generated = list(generated)
-    random.shuffle(generated)
-    return ''.join(generated)
+    generated += random_chars(letters, LETTERS)
+    generated += random_chars(numbers, NUMBERS)
+    generated += random_chars(simbols, SIMBOLS)
+    return shuffle_strings(generated)
+
+def random_chars(lenght, chars):
+    generated = ""
+    for i in range(lenght):
+        generated += random.choice(chars)
+    return generated
+
+def shuffle_strings(text):
+    text = list(text)
+    random.shuffle(text)
+    return ''.join(text)
 
 if __name__ == '__main__':
     print(generate_password())
