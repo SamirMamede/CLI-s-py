@@ -24,4 +24,14 @@ def shuffle_strings(text):
     return ''.join(text)
 
 if __name__ == '__main__':
-    print(generate_password())
+    import argparse
+    parser = argparse.ArgumentParser('Gerador de senhas aleatórias.')
+    parser.add_argument('--letters', type=int, default=8, help='Quantidade de letras.')
+    parser.add_argument('--numbers', type=int, default=4, help='Quantidade de números.')
+    parser.add_argument('--simbols', type=int, default=2, help='Quantidade de caracteres especiais.')
+    args = parser.parse_args()
+    print(generate_password(
+        letters=args.letters,
+        numbers=args.numbers,
+        simbols=args.simbols
+        ))
