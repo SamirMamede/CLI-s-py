@@ -2,5 +2,15 @@
 
 ### Command lines using python
 
-First commit, a simple command line to generate a 14-digit password.
+Command line to generate a random password.
+
 - password.py
+
+- defaut: 8 letters, 4 numbers and 2 special characters.
+
+### options:
+
+- -h, --help         show this help message and exit
+- --letters LETTERS  Quantidade de letras.
+- --numbers NUMBERS  Quantidade de números.
+- --simbols SIMBOLS  Quantidade de caracteres especiais.
